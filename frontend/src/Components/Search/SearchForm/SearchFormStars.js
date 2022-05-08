@@ -5,7 +5,7 @@ function SearchFormStars({ criteria, setCriteria }) {
     const stars = ["1", "2", "3", "4", "5"];
     return (
         <div className="text-gray-900">
-            <h2 className="text-2xl font-semibold">Hotel Stars:</h2>
+            <h2 className="text-2xl font-semibold">Đánh giá:</h2>
 
             {stars.map((s, i) => {
                 return (
@@ -16,7 +16,7 @@ function SearchFormStars({ criteria, setCriteria }) {
                             value={s}
                             setCriteria={setCriteria}
                             criteria={criteria}
-                            title="Stars"
+                            title="Sao"
                         />
                     </label>
                 );

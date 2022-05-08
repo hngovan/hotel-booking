@@ -38,15 +38,15 @@ function LoginForm() {
                 <ErrorMessage errors={state.auth.errors} />
             )}
             <h1 className="text-3xl font-semibold text-center">
-                Sign In To Your Account
+                Đăng nhập vào tài khoản của bạn
             </h1>
 
             <form
                 className="w-11/12 sm:w-10/12 lg:w-6/12 xl:w-4/12 bg-gray-200 p-10 rounded-sm  mt-10 border shadow-lg"
                 onSubmit={onSubmitHandler}
             >
-                <label htmlFor="email" className="block">
-                    E-mail:{" "}
+                <label htmlFor="email" className="block mb-2">
+                    Tên đăng nhập:{" "}
                 </label>
                 <input
                     id="email"
@@ -54,18 +54,20 @@ function LoginForm() {
                     name="email"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
+                    placeholder="Nhập email đăng kí"
                     onChange={(e) =>
                         setUser({ ...user, email: e.target.value })
                     }
                 />
 
-                <label htmlFor="password" className="block mt-5">
-                    Password:{" "}
+                <label htmlFor="password" className="block mt-5 mb-2">
+                    Mật khẩu:{" "}
                 </label>
                 <input
                     id="password"
                     type="password"
                     name="password"
+                    placeholder="Nhập mât khẩu"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
                     onChange={(e) =>
@@ -79,14 +81,14 @@ function LoginForm() {
                     hover:shadow-lg"
                         type="submit"
                     >
-                        Log In
+                        Đăng nhập
                     </button>
 
                     <Link
                         to="/signup"
                         className="text-orange-800 mt-5 md:mt-0 hover:text-orange-600"
                     >
-                        Create an account?
+                        Tạo một tài khoản?
                     </Link>
                 </div>
             </form>

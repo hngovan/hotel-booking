@@ -6,38 +6,38 @@ function HotelItem({ hotel }) {
     useEffect(() => {
         switch (Math.round(parseInt(hotel.rating))) {
             case 10:
-                setRating(["10/10", "Amazing"]);
+                setRating(["10/10", "Quá tuyệt vời"]);
                 break;
             case 9:
-                setRating(["9/10", "Great"]);
+                setRating(["9/10", "Tuyệt vời"]);
                 break;
             case 8:
-                setRating(["8/10", "Very Good"]);
+                setRating(["8/10", "Rất tốt"]);
                 break;
             case 7:
-                setRating(["7/10", "Good"]);
+                setRating(["7/10", "Tốt"]);
                 break;
             case 6:
-                setRating(["6/10", "Fine"]);
+                setRating(["6/10", "Ổn"]);
                 break;
             case 5:
-                setRating(["5/10", "Average"]);
+                setRating(["5/10", "Tạm ổn"]);
                 break;
             case 4:
-                setRating(["4/10", "Bad"]);
+                setRating(["4/10", "Tệ"]);
                 break;
             case 3:
-                setRating(["3/10", "Very Bad"]);
+                setRating(["3/10", "Quá tệ"]);
                 break;
             case 2:
-                setRating(["2/10", "Horrible"]);
+                setRating(["2/10", "Tệ hại"]);
                 break;
             case 1:
-                setRating(["1/10", "Appaling"]);
+                setRating(["1/10", "Rất kinh khủng"]);
                 break;
 
             default:
-                setRating(["?", "Not Rated Yet"]);
+                setRating(["?", "Chưa xếp hạng"]);
                 break;
         }
     }, [hotel]); // eslint-disable-line
@@ -76,9 +76,9 @@ function HotelItem({ hotel }) {
                             <span>{hotel.name}</span>
                         </Link>
                         <span className="font-normal text-base flex flex-col md:justify-center md:items-center">
-                            <span className="">Starting From</span>
+                            <span className="">Giá chỉ từ</span>
                             <span className="font-semibold text-2xl">
-                                {hotel.min_price}DH
+                                {hotel.min_price} VNĐ
                             </span>
                         </span>
                     </div>
@@ -100,7 +100,7 @@ function HotelItem({ hotel }) {
                     hover:shadow-lg"
                                 type="button"
                             >
-                                CHECK ROOMS
+                                Xem phòng
                             </Link>
                         </div>
                     </div>

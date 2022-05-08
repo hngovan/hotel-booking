@@ -44,7 +44,7 @@ function RoomHero({ room }) {
                     {room && room.features.length > 0 && (
                         <>
                             <h2 className="text-2xl text-orange-800  font-semibold mt-5">
-                                Features
+                                Tiện nghi phòng
                             </h2>
 
                             <div className="flex">
@@ -75,7 +75,7 @@ function RoomHero({ room }) {
                         to="/book"
                         className="bg-orange-600 mt-10 py-2 px-6 text-3xl text-gray-200 block text-center w-10/12 mx-auto hover:bg-orange-900 rounded-sm"
                     >
-                        BOOK
+                        Đặt ngay
                     </Link>
                 </div>
             </div>

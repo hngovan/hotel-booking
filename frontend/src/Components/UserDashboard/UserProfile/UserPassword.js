@@ -18,7 +18,7 @@ function UserPassword({ id }) {
     return (
         <div className="mt-10">
             <h2 className="font-semibold">
-                <i className="fas fa-unlock-alt mr-2"></i> Change your password
+                <i className="fas fa-unlock-alt mr-2"></i> Thay đổi mật khẩu của bạn
             </h2>
             <form
                 action=""
@@ -26,13 +26,14 @@ function UserPassword({ id }) {
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="old-password" className="block mt-5">
-                    Old Password:{" "}
+                    Mật khẩu cũ:{" "}
                 </label>
                 <input
                     type="password"
                     id="old-password"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userPassword.password}
+                    placeholder="Nhập mật khẩu cũ"
                     onChange={(e) =>
                         setUserPassword({
                             ...userPassword,
@@ -42,13 +43,14 @@ function UserPassword({ id }) {
                 />
 
                 <label htmlFor="new-password" className="block mt-5">
-                    New Password:{" "}
+                    Mật khẩu mới:{" "}
                 </label>
                 <input
                     type="password"
                     id="new-password"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userPassword.newPassword}
+                    placeholder="Nhập mật khẩu mới"
                     onChange={(e) =>
                         setUserPassword({
                             ...userPassword,
@@ -58,13 +60,14 @@ function UserPassword({ id }) {
                 />
 
                 <label htmlFor="confirm-password" className="block mt-5">
-                    Confirm Password:{" "}
+                    Xác nhận mật khẩu:{" "}
                 </label>
                 <input
                     type="password"
                     id="confirm-password"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userPassword.confirmNewPassword}
+                    placeholder="Xác nhận mật khẩu"
                     onChange={(e) =>
                         setUserPassword({
                             ...userPassword,
@@ -78,7 +81,7 @@ function UserPassword({ id }) {
                     hover:shadow-lg block mt-5"
                     type="submit"
                 >
-                    Update
+                    Cập nhật
                 </button>
             </form>
         </div>

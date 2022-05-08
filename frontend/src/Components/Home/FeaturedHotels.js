@@ -11,7 +11,7 @@ function FeaturedHotels() {
 
     return (
         <section className="px-5 xl:px-48">
-            <TitleSection title="Featured Hotels" />
+            <TitleSection title="Khách Sạn Nổi Bật" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {state &&

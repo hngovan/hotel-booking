@@ -40,7 +40,7 @@ function Header({ hotelId }) {
                         alt="logo"
                     />
                     <span className="hidden md:inline-block font-serif">
-                        Hotel101
+                        SANHOK
                     </span>
                 </Link>
 
@@ -75,13 +75,13 @@ function Header({ hotelId }) {
                                     to="/login"
                                     className="block px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 "
                                 >
-                                    Login
+                                    Đăng nhập
                                 </Link>
                                 <Link
                                     to="/signup"
                                     className="block px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 "
                                 >
-                                    Signup
+                                    Đăng kí
                                 </Link>
                             </div>
                         </>
@@ -122,21 +122,21 @@ function Header({ hotelId }) {
                                         to={`/user-profile/${id}`}
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Your Profile
+                                        Cá nhân
                                     </Link>
                                     <Link
                                         to={`/user-bookings/${id}`}
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Your Bookings
+                                        Phòng đã đặt
                                     </Link>
                                     <Link
                                         to={`/user-reviews/${id}`}
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Your Reviews
+                                        Nhận xét của bạn
                                     </Link>
 
                                     <button
@@ -149,7 +149,7 @@ function Header({ hotelId }) {
                                             window.location.replace("/");
                                         }}
                                     >
-                                        Logout
+                                        Đăng xuất
                                     </button>
                                 </div>
                             ) : (
@@ -167,35 +167,35 @@ function Header({ hotelId }) {
                                         to={`/admin-profile/${id}`}
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Your Admin Profile
+                                        Cá nhân
                                     </Link>
                                     <Link
                                         to="/hotel-management"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Hotel Management
+                                        Quản lý khách sạn
                                     </Link>
                                     <Link
                                         to="/room-management"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Room Management
+                                        Quản lý phòng
                                     </Link>
                                     <Link
                                         to="/booking-management"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Booking Management
+                                        Quản lý đặt phòng
                                     </Link>
                                     <Link
                                         to="/review-management"
                                         className="block px-4 py-2 text-gray-700 hover:bg-gray-300
                                 focus:outline-none focus:bg-gray-300 "
                                     >
-                                        Review Management
+                                        Quản lý bài đánh giá
                                     </Link>
 
                                     <button
@@ -208,7 +208,7 @@ function Header({ hotelId }) {
                                             window.location.replace("/");
                                         }}
                                     >
-                                        Logout
+                                        Đăng xuất
                                     </button>
                                 </div>
                             )}

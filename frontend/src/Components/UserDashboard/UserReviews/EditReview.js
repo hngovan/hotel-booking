@@ -57,7 +57,7 @@ function EditReview({
 
             <form className="w-full md:w-3/4 z-20" onSubmit={onSubmitHandler}>
                 <h2 className="text-2xl font-semibold text-gray-100">
-                    Update Your Review
+                    Cập nhật đánh giá
                 </h2>
                 <textarea
                     rows="3"
@@ -69,7 +69,7 @@ function EditReview({
                 ></textarea>
                 <div className="flex items-center">
                     <button className="bg-orange-500 hover:bg-orange-700 text-gray-100 font-bold py-2 px-4 rounded-sm mr-5">
-                        Update
+                        Cập nhật
                     </button>
                     <select
                         aria-label="select rating"
@@ -82,16 +82,16 @@ function EditReview({
                             });
                         }}
                     >
-                        <option value="10">10 Amazing</option>
-                        <option value="9">9 Great</option>
-                        <option value="8">8 Very Good</option>
-                        <option value="7">7 Good</option>
-                        <option value="6">6 Fine</option>
-                        <option value="5">5 Average</option>
-                        <option value="4">4 Bad</option>
-                        <option value="3">3 Very Bad</option>
-                        <option value="2">2 Horrible</option>
-                        <option value="1">1 Appaling</option>
+                        <option value="10">10 Quá tuyệt vời</option>
+                        <option value="9">9 Tuyệt vời</option>
+                        <option value="8">8 Rất tốt</option>
+                        <option value="7">7 Tốt</option>
+                        <option value="6">6 Ổn</option>
+                        <option value="5">5 Tạm ổn</option>
+                        <option value="4">4 Tệ</option>
+                        <option value="3">3 Quá tệ</option>
+                        <option value="2">2 Tệ Hại</option>
+                        <option value="1">1 Rất kinh khủng</option>
                     </select>
                 </div>
             </form>

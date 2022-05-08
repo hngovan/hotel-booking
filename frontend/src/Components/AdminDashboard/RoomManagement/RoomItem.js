@@ -40,11 +40,11 @@ function RoomItem({ room: { id, room_name, hotel_name, image }, room }) {
 
             <div className="w-2/3 px-4 py-4 bg-white rounded-r-sm ">
                 <h2 className="text-md text-gray-700 mt-4">
-                    Room Name :{" "}
+                    Loại phòng :{" "}
                     <span className="font-semibold">{room_name}</span>
                 </h2>
                 <h2 className="text-md text-gray-700 mt-4">
-                    Hotel : <span className="font-semibold">{hotel_name}</span>
+                    Khách sạn : <span className="font-semibold">{hotel_name}</span>
                 </h2>
 
                 <div className="mt-5 text-gray-200 absolute bottom-0 right-0 mb-5 mr-5">
@@ -57,14 +57,15 @@ function RoomItem({ room: { id, room_name, hotel_name, image }, room }) {
                             })
                         }
                     >
-                        Delete
+                        Xóa
                     </button>
-                    <Link
-                        to={`/edit-room/${id}`}
-                        className="ml-2 text-xs font-semibold px-2 py-1 bg-blue-600 rounded-sm hover:bg-blue-900 cursor-pointer"
-                    >
-                        Edit
-                    </Link>
+                   <button  className="ml-2 text-xs font-semibold px-2 py-1 bg-blue-600 rounded-sm hover:bg-blue-900 cursor-pointer"> 
+                        <Link
+                            to={`/edit-room/${id}`}
+                        >
+                            Sửa
+                        </Link>
+                    </button>
                 </div>
             </div>
         </div>

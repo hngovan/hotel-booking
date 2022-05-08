@@ -48,7 +48,7 @@ function UserSiderBar() {
                 }`}
             >
                 <i className="fas fa-user-alt md:mr-2"></i>
-                <span className="mt-2 lg:mt-0">My Profile</span>
+                <span className="mt-2 lg:mt-0">Cá nhân</span>
             </Link>
 
             <div className="hidden md:block border-t w-2/3 my-5"></div>
@@ -60,7 +60,7 @@ function UserSiderBar() {
                 }`}
             >
                 <i className="fas fa-ticket-alt md:mr-2"></i>
-                <span className="mt-2 lg:mt-0">My Bookings</span>
+                <span className="mt-2 lg:mt-0">Phòng đã đặt</span>
             </Link>
 
             <div className="hidden md:block border-t w-2/3 my-5"></div>
@@ -72,7 +72,7 @@ function UserSiderBar() {
                 }`}
             >
                 <i className="fas fa-pen md:mr-2"></i>
-                <span className="mt-2 lg:mt-0">My Reviews</span>
+                <span className="mt-2 lg:mt-0">Nhận xét của bạn</span>
             </Link>
         </div>
     );

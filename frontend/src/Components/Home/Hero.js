@@ -30,20 +30,26 @@ function Hero() {
 
             <div className="mt-8 book flex flex-col justify-center items-center text-gray-100 z-20 w-10/12">
                 <h1 className="mt-16 hidden sm:block text-xl md:text-4xl xl:text-6xl capitalize text-center font-serif">
-                    Enjoy a luxury experience in <br />
+                    Tận hưởng Trải nghiệm Sang trọng ở<br />
                     <Typical
                         steps={[
-                            " Marrakech",
+                            " Đà Lạt",
                             3000,
-                            " Rabat",
+                            " Vũng Tàu",
                             3000,
-                            " Tanger",
+                            " TP. Hồ Chí Minh",
                             3000,
-                            " Fes",
+                            " Phú Quốc",
                             3000,
-                            " Casablanca",
+                            " Nha Trang",
                             3000,
-                            " Agadir",
+                            " Hà Nội",
+                            3000,
+                            " Huế",
+                            3000,
+                            " Hạ Long",
+                            3000,
+                            " Hội An",
                             3000
                         ]}
                         loop={Infinity}
@@ -59,7 +65,7 @@ function Hero() {
                     >
                         <div className="flex flex-col md:mr-3 w-full md:w-3/4 ">
                             <label htmlFor='check-in' className="text-gray-100 text-xl">
-                                Check In
+                                Ngày nhận phòng
                             </label>
                             <input
                                 id= 'check-in'
@@ -76,7 +82,7 @@ function Hero() {
                         </div>
                         <div className="flex flex-col md:mr-3 w-full md:w-3/4 ">
                             <label htmlFor='check-out' className="text-gray-100 text-xl">
-                                Check Out
+                                Ngày trả phòng
                             </label>
                             <input
                                 id='check-out'
@@ -92,7 +98,7 @@ function Hero() {
                             />
                         </div>
                         <div className="flex flex-col md:mr-3 w-full md:w-3/4 ">
-                            <span className="text-gray-100 text-xl">City</span>
+                            <span className="text-gray-100 text-xl">Thành phố</span>
                             <select
                                 aria-label='City'
                                 className="px-6 py-3 mt-2"
@@ -104,7 +110,7 @@ function Hero() {
                                     })
                                 }
                             >
-                                <option value="all">All Cities</option>
+                                <option value="all">Tất cả thành phố</option>
                                 {state &&
                                     state.search.cities.map((city, i) => {
                                         return (
@@ -112,12 +118,13 @@ function Hero() {
                                                 {city}
                                             </option>
                                         );
-                                    })}
+                                    }
+                                )}
                             </select>
                         </div>
                         <div className="flex flex-col md:mr-3 w-full md:w-3/4 ">
                             <span className="text-gray-100 text-xl">
-                                Guests
+                                Số Lượng khách
                             </span>
                             <select
                                 aria-label='Guest Count'
@@ -134,6 +141,7 @@ function Hero() {
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
+                                <option value="4">4</option>
                             </select>
                         </div>
                     </div>
@@ -146,7 +154,7 @@ function Hero() {
                     hover:shadow-lg block mx-auto mt-2 xl:mt-0"
                     to={`/search/check_in=${initSearchData.check_in}&check_out=${initSearchData.check_out}&city=${initSearchData.city}&guest=${initSearchData.guest}`}
                 >
-                    Search
+                    Tìm Kiếm
                 </Link>
             </div>
         </section>

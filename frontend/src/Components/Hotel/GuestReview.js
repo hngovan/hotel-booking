@@ -9,34 +9,34 @@ function GuestReview({
     let _rating = "";
     switch (rating) {
         case 10:
-            _rating = "10/10 Amazing";
+            _rating = "10/10 Quá tuyệt vời";
             break;
         case 9:
-            _rating = "9/10 Great";
+            _rating = "9/10 Tuyệt vời";
             break;
         case 8:
-            _rating = "8/10 Very Good";
+            _rating = "8/10 Rất tốt";
             break;
         case 7:
-            _rating = "7/10 Good";
+            _rating = "7/10 Tốt";
             break;
         case 6:
-            _rating = "6/10 Fine";
+            _rating = "6/10 Ổn";
             break;
         case 5:
-            _rating = "5/10 Average";
+            _rating = "5/10 Tạm ổn";
             break;
         case 4:
-            _rating = "4/10 Bad";
+            _rating = "4/10 Tệ";
             break;
         case 3:
-            _rating = "3/10 Very Bad";
+            _rating = "3/10 Quá tệ";
             break;
         case 2:
-            _rating = "2/10 Horrible";
+            _rating = "2/10 Tệ Hại";
             break;
         case 1:
-            _rating = "1/10 Appaling";
+            _rating = "1/10 Rất kinh khủng";
             break;
 
         default:

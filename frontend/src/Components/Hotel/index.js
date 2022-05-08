@@ -41,7 +41,7 @@ function Hotel(props) {
                     pathname: "/404",
                     state: {
                         message:
-                            "There is no such hotel, you'll be redirected in a bit"
+                            "Không có khách sạn nào như vậy, bạn sẽ được chuyển hướng sau một vài giây"
                     }
                 });
             }
@@ -58,7 +58,7 @@ function Hotel(props) {
             <HotelHero hotel={state.hotels.hotel} />
 
             {state.hotels.hotel && (
-                <TitleSection title={`${state.hotels.hotel.name}'s Rooms`} />
+                <TitleSection title={`Phòng của khách sạn ${state.hotels.hotel.name}`} />
             )}
 
             <HotelRooms hotel={state.hotels.hotel} />
@@ -68,9 +68,9 @@ function Hotel(props) {
                     <Border />
 
                     <TitleSection
-                        title={`What guests say about ${
+                        title={`Đánh giá của khách về ${
                             state.hotels.hotel && state.hotels.hotel.name
-                        } Hotel`}
+                        }`}
                     />
                     <GuestReviewsList reviews={state.reviews.reviews} />
                 </>
@@ -88,7 +88,7 @@ function Hotel(props) {
 
             {state.hotels.hotel && (
                 <TitleSection
-                    title={`Where to find ${state.hotels.hotel.name} Hotel`}
+                    title={`Tìm khách sạn ${state.hotels.hotel.name} ở đâu?`}
                 />
             )}
 

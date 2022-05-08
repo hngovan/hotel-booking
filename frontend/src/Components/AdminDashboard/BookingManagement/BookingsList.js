@@ -17,7 +17,7 @@ function BookingsList() {
 
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h2 className="text-xl font-semibold">All Bookings</h2>
+            <h2 className="text-xl font-semibold">Tất cả phòng đã đặt</h2>
             {state.bookings.loading && <Loading />}
             {state.bookings.pagination.last_page !== 1 && (
                 <Pagination

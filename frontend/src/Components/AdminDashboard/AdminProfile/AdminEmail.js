@@ -20,7 +20,7 @@ function AdminEmail({ id }) {
     return (
         <div className="mt-10">
             <h2 className="font-semibold">
-                <i className="fas fa-envelope mr-2"></i> Change your email
+                <i className="fas fa-envelope mr-2"></i> Thay đổi email của bạn
             </h2>
 
             <form
@@ -29,23 +29,25 @@ function AdminEmail({ id }) {
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="email" className="block mt-5">
-                    Old Email:{" "}
+                    Email cũ:{" "}
                 </label>
                 <input
                     type="email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.email}
+                    placeholder="Nhập email cũ"
                     onChange={(e) =>
                         setUserEmail({ ...userEmail, email: e.target.value })
                     }
                 />
                 <label htmlFor="email" className="block mt-5">
-                    New Email:{" "}
+                    Email mới:{" "}
                 </label>
                 <input
                     type="email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.newEmail}
+                    placeholder="Nhập email mới"
                     onChange={(e) =>
                         setUserEmail({
                             ...userEmail,
@@ -54,12 +56,13 @@ function AdminEmail({ id }) {
                     }
                 />
                 <label htmlFor="email" className="block mt-5">
-                    Confirm New Email:{" "}
+                    Xác nhận Email:{" "}
                 </label>
                 <input
                     type="email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.confirmNewEmail}
+                    placeholder="Xác nhận email"
                     onChange={(e) =>
                         setUserEmail({
                             ...userEmail,

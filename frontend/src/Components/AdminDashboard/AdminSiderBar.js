@@ -60,7 +60,7 @@ function AdminSiderBar() {
                     }`}
                 >
                     <i className="fas fa-user-alt md:mr-2"></i>
-                    <span className="mt-2 lg:mt-0">My Profile</span>
+                    <span className="mt-2 lg:mt-0">Cá nhân</span>
                 </Link>
 
                 <div className="hidden md:block border-t w-2/3 my-5"></div>
@@ -72,7 +72,7 @@ function AdminSiderBar() {
                     }`}
                 >
                     <i className="fas fa-building md:mr-2"></i>
-                    <span className="mt-2 lg:mt-0">Hotels Management</span>
+                    <span className="mt-2 lg:mt-0">Quản lý khách sạn</span>
                 </Link>
 
                 <div className="hidden md:block border-t w-2/3 my-5"></div>
@@ -84,7 +84,7 @@ function AdminSiderBar() {
                     }`}
                 >
                     <i className="fas fa-bed md:mr-2"></i>
-                    <span className="mt-2 lg:mt-0">Rooms Management</span>
+                    <span className="mt-2 lg:mt-0">Quản lý phòng</span>
                 </Link>
 
                 <div className="hidden md:block border-t w-2/3 my-5"></div>
@@ -96,7 +96,7 @@ function AdminSiderBar() {
                     }`}
                 >
                     <i className="fas fa-ticket-alt md:mr-2"></i>
-                    <span className="mt-2 lg:mt-0">Bookings Management</span>
+                    <span className="mt-2 lg:mt-0">Quản lý đặt phòng</span>
                 </Link>
                 <div className="hidden md:block border-t w-2/3 my-5"></div>
 
@@ -107,7 +107,7 @@ function AdminSiderBar() {
                     }`}
                 >
                     <i className="fas fa-pen md:mr-2"></i>
-                    <span className="mt-2 lg:mt-0">Reviews Management</span>
+                    <span className="mt-2 lg:mt-0">Quản lý bài đánh giá</span>
                 </Link>
             </div>
         </div>

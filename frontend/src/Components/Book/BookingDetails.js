@@ -37,7 +37,7 @@ function BookingDetails({ booking, setBooking }) {
     return (
         <>
             <h1 className="sr-only">Book Room</h1>
-            <h2 className="pl-5 text-2xl">Step 1: Check Details</h2>
+            <h2 className="pl-5 text-2xl">Bước 1: Kiểm tra chi tiết</h2>
 
             <div className="p-5 ">
                 <div className="flex flex-col md:flex-row md:justify-between w-full bg-gray-200 rounded-sm  overflow-hidden shadow-xl">
@@ -54,18 +54,18 @@ function BookingDetails({ booking, setBooking }) {
                     </div>
                     <div className="p-5 md:w-3/4">
                         <div className="font-semibold text-2xl flex flex-col md:flex-row md:justify-between">
-                            <span>{room.name}</span>
+                            <span className="w-auto md:w-3/4">{room.name}</span>
                             <span>
-                                <span>{price}</span>$
+                                <span>{price}</span> VNĐ
                             </span>
                         </div>
                         <div className="mt-8">
-                            <div className="flex flex-col md:flex-row md:justify-between items-center">
+                            <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center">
                                 <label
                                     htmlFor="check-in"
                                     className="mr-5 text-gray-900 md:w-1/4"
                                 >
-                                    Check-in
+                                    Ngày nhận phòng
                                 </label>
                                 <input
                                     id="check-in"
@@ -82,12 +82,12 @@ function BookingDetails({ booking, setBooking }) {
                                     }}
                                 />
                             </div>
-                            <div className="flex flex-col md:flex-row md:justify-between items-center mt-4">
+                            <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mt-4">
                                 <label
                                     htmlFor="check-out"
                                     className="mr-5 text-gray-900 md:w-1/4"
                                 >
-                                    Check-out
+                                    Ngày trả phòng
                                 </label>
                                 <input
                                     id="check-out"

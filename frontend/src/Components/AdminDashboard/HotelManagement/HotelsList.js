@@ -27,7 +27,7 @@ function HotelsList() {
 
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  rounded-t-none md:rounded-t-md">
-            <h2 className="text-xl font-semibold">All Hotels</h2>
+            <h2 className="text-xl font-semibold">Tất cả khách sạn</h2>
             {state.hotels.loading && <Loading />}
             {state.hotels.success === false && (
                 <ErrorMessage errors={state.hotels.errors} />
@@ -37,7 +37,7 @@ function HotelsList() {
                 to="/add-hotel"
                 className="mt-5 px-2 py-1 inline-block rounded-sm  text-gray-100 bg-green-600 hover:bg-green-900 "
             >
-                Add a Hotel
+                Thêm khách sạn
             </Link>
 
             {state.hotels.pagination.last_page !== 1 && (

@@ -37,7 +37,7 @@ function HotelCard({ hotel: { id, name, min_price, star, image } }) {
                                     </div>
                                 </div>
                                 <div className="text-gray-100 font-semibold">
-                                    Starting From {min_price}$
+                                    Giá chỉ từ {min_price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
                                 </div>
                             </div>
                         </div>

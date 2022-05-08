@@ -22,6 +22,8 @@ function EditRoomForm() {
     });
     const [image, setImage] = useState(null);
     const [features, setFeatures] = useState([]);
+    const [previews, setPreviews] = useState("");
+
     useEffect(() => {
         getRoom(dispatch, id);
         getAllHotels(dispatch, state.auth.token);
@@ -85,9 +87,22 @@ function EditRoomForm() {
         return () => clearTimeout(timer);
     }, [state.rooms.success]); // eslint-disable-line
 
+    const handleUpload = (e) => {
+        const fileList = Array.from(e.target.files);
+        
+        setImage(fileList); //Passei o valor de fileList para o State Files
+        
+        const mappedFiles = fileList.map((file) => ({
+          ...file,
+          preview: URL.createObjectURL(file),
+        }));
+
+        setPreviews(mappedFiles); 
+    };
+
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h2 className="text-xl font-semibold">Edit Room</h2>
+            <h2 className="text-xl font-semibold">Sửa phòng</h2>
 
             <form
                 action=""
@@ -95,42 +110,53 @@ function EditRoomForm() {
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="first_name" className="block mt-5">
-                    Add at least 3 images:{" "}
+                    Thêm ít nhất 3 hình ảnh:{" "}
                 </label>
-                <div className="flex items-center mt-5">
-                    <img
-                        src={
-                            room && room.image && typeof image === "string"
-                                ? `${process.env.REACT_APP_BASE_URL}/img/rooms/${image}`
-                                : "http://placehold.it/300x300?text=room image"
-                        }
-                        alt="room"
-                        className="w-32 h-32 rounded-sm object-cover"
-                    />
-
-                    <label className="ml-5 px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer">
-                        <input
-                            type="file"
-                            id="test"
-                            className="hidden"
-                            onChange={(e) => {
-                                setImage(e.target.files);
-                            }}
-                            multiple
+                <div className="my-5 grid gap-3 grid-cols-5">
+                    {previews.length > 0 ? (
+                        previews.map((file) =>  
+                            <img
+                                key={file.preview}
+                                src={file.preview}
+                                alt="hotel"
+                                className="w-full h-32 rounded-sm object-cover"
+                            />
+                        )   
+                    ): (
+                        <img
+                            src={
+                                room && room.image && typeof image === "string"
+                                    ? `${process.env.REACT_APP_BASE_URL}/img/rooms/${image}`
+                                    : "https://via.placeholder.com/150"
+                            }
+                            alt="room"
+                            className="w-32 h-32 rounded-sm object-cover"
                         />
-                        <i className="fas fa-camera mr-2"></i>
-                        <span>
-                            {image && typeof image === "object"
-                                ? Object.keys(image).map(function (key, index) {
-                                      return image[key].name + ", ";
-                                  })
-                                : "Upload"}
-                        </span>
-                    </label>
+                    )}
                 </div>
+                <label className="px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer w-auto">
+                    <input
+                        type="file"
+                        id="test"
+                        className="hidden"
+                        onChange={(e) => {
+                            handleUpload(e)
+                        }}
+                        multiple
+                        accept="image/*"
+                    />
+                    <i className="fas fa-camera mr-2"></i>
+                    <span>
+                        {image && typeof image === "object"
+                            ? Object.keys(image).map(function (key, index) {
+                                    return image[key].name + ", ";
+                                })
+                            : "Tải ảnh lên"}
+                    </span>
+                </label>
 
                 <label htmlFor="name" className="block mt-5">
-                    Room Name:{" "}
+                    Tên phòng:{" "}
                 </label>
                 <input
                     type="text"
@@ -141,7 +167,7 @@ function EditRoomForm() {
                 />
 
                 <label htmlFor="description" className="block mt-5">
-                    Room Description:{" "}
+                    Mô tả phòng:{" "}
                 </label>
                 <textarea
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
@@ -152,7 +178,7 @@ function EditRoomForm() {
                 ></textarea>
 
                 <label htmlFor="address" className="block mt-5">
-                    Hotel:{" "}
+                    Khách sạn:{" "}
                 </label>
 
                 <select
@@ -175,7 +201,7 @@ function EditRoomForm() {
                 </select>
 
                 <label htmlFor="guest" className="block mt-5">
-                    Room Guests:{" "}
+                    Số lượng người ở:{" "}
                 </label>
                 <input
                     type="text"
@@ -188,7 +214,7 @@ function EditRoomForm() {
                 />
 
                 <label htmlFor="price" className="block mt-5">
-                    Room Price:{" "}
+                    Giá phòng:{" "}
                 </label>
                 <input
                     type="text"
@@ -214,7 +240,7 @@ function EditRoomForm() {
                     hover:shadow-lg block mt-5"
                     type="submit"
                 >
-                    Update Room
+                    Cập nhật phòng
                 </button>
             </form>
         </div>

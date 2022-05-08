@@ -20,7 +20,7 @@ function UserEmail({ id }) {
     return (
         <div className="mt-10">
             <h2 className="font-semibold">
-                <i className="fas fa-envelope mr-2"></i> Change your email
+                <i className="fas fa-envelope mr-2"></i> Thay đổi Email của bạn
             </h2>
 
             <form
@@ -29,25 +29,27 @@ function UserEmail({ id }) {
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="old-email" className="block mt-5">
-                    Old Email:{" "}
+                    Email cũ:{" "}
                 </label>
                 <input
                     type="email"
                     id="old-email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.email}
+                    placeholder="Nhập email cũ"
                     onChange={(e) =>
                         setUserEmail({ ...userEmail, email: e.target.value })
                     }
                 />
                 <label htmlFor="new-email" className="block mt-5">
-                    New Email:{" "}
+                    Email mới:{" "}
                 </label>
                 <input
                     type="email"
                     id="new-email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.newEmail}
+                    placeholder="Nhập email mới"
                     onChange={(e) =>
                         setUserEmail({
                             ...userEmail,
@@ -56,13 +58,14 @@ function UserEmail({ id }) {
                     }
                 />
                 <label htmlFor="confirm-email" className="block mt-5">
-                    Confirm New Email:{" "}
+                    Xác nhận Email:{" "}
                 </label>
                 <input
                     type="email"
                     id="confirm-email"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userEmail.confirmNewEmail}
+                    placeholder="Xác nhận email"
                     onChange={(e) =>
                         setUserEmail({
                             ...userEmail,
@@ -76,7 +79,7 @@ function UserEmail({ id }) {
                     hover:shadow-lg block mt-5"
                     type="submit"
                 >
-                    Update
+                    Cập nhật
                 </button>
             </form>
         </div>

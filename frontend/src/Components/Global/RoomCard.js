@@ -19,7 +19,7 @@ function RoomCard({ room }) {
                         src={
                             room && room.image && typeof image === "string"
                                 ? `${process.env.REACT_APP_BASE_URL}/img/rooms/${image}`
-                                : "http://placehold.it/300x300?text=room image"
+                                : "https://via.placeholder.com/150"
                         }
                         className="w-full h-64 object-cover"
                         alt="room"
@@ -27,9 +27,9 @@ function RoomCard({ room }) {
                     <div className="absolute bottom-0 text-gray-100 flex">
                         <div className="bg-orange-600 py-2 px-6 rounded-tr-lg flex flex-col items-center">
                             <span className="line-through text-gray-300 text-sm">
-                                {parseFloat(room.price) + 100} $
+                                {(parseFloat(room.price) + 100000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
                             </span>
-                            <span className="text-xl">{room.price} $</span>
+                            <span className="text-xl">{room.price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</span>
                         </div>
                     </div>
                 </div>

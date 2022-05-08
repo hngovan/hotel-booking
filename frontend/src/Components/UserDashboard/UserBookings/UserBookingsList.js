@@ -18,7 +18,7 @@ function UserBookingsList() {
 
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h1 className="text-xl font-semibold">Your Bookings</h1>
+            <h1 className="text-xl font-semibold">Phòng đã đặt</h1>
             {state.bookings.loading && <Loading />}
 
             {state.bookings.pagination.last_page !== 1 && (
@@ -41,7 +41,7 @@ function UserBookingsList() {
                     })}
 
                 {state.bookings.allBookings.length === 0 && (
-                    <div className=" mt-10">You have no bookings!</div>
+                    <div className=" mt-10">Bạn chưa đặt chỗ!</div>
                 )}
             </div>
 

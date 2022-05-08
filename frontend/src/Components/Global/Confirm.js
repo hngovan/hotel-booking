@@ -17,7 +17,7 @@ function Confirm({ setConfirmDelete, review, hotel, room }) {
             <div className="z-20 flex flex-col items-center bg-gray-300 rounded-sm  shadow-2xl p-5 m-5 w-full sm:w-6/12 xl:w-4/12">
                 <div className="flex flex-col items-center justify-center md:flex-row">
                     <i className="fas fa-exclamation-triangle fa-lg text-red-600 md:mr-5"></i>
-                    <span className="mt-2">Are you sure?</span>
+                    <span className="mt-2">Bạn có muốn xóa không ?</span>
                 </div>
                 <div className="flex flex-col items-center justify-center md:flex-row mt-5">
                     <button
@@ -25,7 +25,7 @@ function Confirm({ setConfirmDelete, review, hotel, room }) {
                     hover:shadow-lg  md:mr-5"
                         onClick={() => setConfirmDelete(false)}
                     >
-                        Cancel
+                        Không
                     </button>
                     <button
                         className="mt-2 md:mt-0 rounded-sm  bg-red-600 text-white hover:bg-red-700 uppercase text-sm px-6 py-2 shadow
@@ -58,7 +58,7 @@ function Confirm({ setConfirmDelete, review, hotel, room }) {
                             }
                         }}
                     >
-                        Confirm
+                        Xác nhận
                     </button>
                 </div>
             </div>

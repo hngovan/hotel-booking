@@ -21,6 +21,7 @@ function AddRoomForm() {
     });
 
     const [image, setImage] = useState("");
+    const [previews, setPreviews] = useState("");
 
     useEffect(() => {
         getAllHotels(dispatch, state.auth.token);
@@ -46,19 +47,47 @@ function AddRoomForm() {
         return () => clearTimeout(timer);
     }, [state.rooms.success]); // eslint-disable-line
 
+    const handleUpload = (e) => {
+        const fileList = Array.from(e.target.files);
+        
+        setImage(fileList); //Passei o valor de fileList para o State Files
+        
+        const mappedFiles = fileList.map((file) => ({
+          ...file,
+          preview: URL.createObjectURL(file),
+        }));
+
+        setPreviews(mappedFiles); 
+    };
+
     useEffect(() => {
         var input = document.querySelector(".features"), // eslint-disable-next-line
             tagify = new Tagify(input, {
                 whitelist: [
-                    "MASTER BEDROOMS",
-                    "POOL & SPA",
-                    "WIFI COVERAGE",
-                    "HOT TUB"
+                    "Bồn nước nóng",
+                    "Phòng tắm riêng",
+                    "Tầm nhìn ra biển",
+                    "Hồ bơi trên sân thượng",
+                    "Wifi miễn phí",
+                    "TV màn hình phẳng",
+                    "Đồ vệ sinh cá nhân miễn phí",
+                    "Bồn tắm hoặc Vòi sen",
+                    "Nhà vệ sinh",
+                    "Ổ điện gần giường",
+                    "Khu vực tiếp khách",
+                    "Bàn ủi li quần",
+                    "Tủ lạnh",
+                    "Điều hòa",
+                    "Điện thoại",
+                    "Khăn tắm/Bộ khăn trải giường (có thu phí)",
+                    "Sàn lát gạch/đá cẩm thạch",
+                    "Giá treo quần áo",
+                    "Nước rửa tay",
                 ],
                 dropdown: {
                     classname: "color-blue",
                     enabled: 0, // show the dropdown immediately on focus
-                    maxItems: 5,
+                    maxItems: 20,
                     position: "text", // place the dropdown near the typed text
                     closeOnSelect: false, // keep the dropdown open after selecting a suggestion
                     highlightFirst: true
@@ -83,49 +112,60 @@ function AddRoomForm() {
     };
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h2 className="text-xl font-semibold">Add Room</h2>
+            <h2 className="text-xl font-semibold">Thêm phòng</h2>
             <form
                 action=""
                 className="mt-5 bg-gray-300 p-5 rounded-sm "
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="first_name" className="block mt-5">
-                    Add at least 3 images:{" "}
+                    Thêm ít nhất 3 hình ảnh:{" "}
                 </label>
-                <div className="flex items-center mt-5">
-                    <img
-                        src={
-                            room && room.image
-                                ? `${process.env.REACT_APP_BASE_URL}/img/rooms/${room.image}`
-                                : "http://placehold.it/300x300?text=room image"
-                        }
-                        alt="room"
-                        className="w-32 h-32 rounded-sm object-cover"
-                    />
-
-                    <label className="ml-5 px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer">
-                        <input
-                            type="file"
-                            id="test"
-                            className="hidden"
-                            onChange={(e) => {
-                                setImage(e.target.files);
-                            }}
-                            multiple
+                <div className="my-5 grid gap-3 grid-cols-5">
+                    {previews.length > 0 ? (
+                        previews.map((file) =>  
+                            <img
+                                key={file.preview}
+                                src={file.preview}
+                                alt="hotel"
+                                className="w-full h-32 rounded-sm object-cover"
+                            />
+                        )   
+                    ): (
+                        <img
+                            src={
+                                room && room.image
+                                    ? `${process.env.REACT_APP_BASE_URL}/img/rooms/${room.image}`
+                                    : "https://via.placeholder.com/150"
+                            }
+                            alt="room"
+                            className="w-32 h-32 rounded-sm object-cover"
                         />
-                        <i className="fas fa-camera mr-2"></i>
-                        <span>
-                            {image
-                                ? Object.keys(image).map(function (key) {
-                                      return image[key].name + ", ";
-                                  })
-                                : "Upload"}
-                        </span>
-                    </label>
+                    )}
                 </div>
+                <label className="px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer w-auto">
+                    <input
+                        type="file"
+                        id="test"
+                        className="hidden"
+                        onChange={(e) => {
+                            handleUpload(e)
+                        }}
+                        multiple
+                        accept="image/*"
+                    />
+                    <i className="fas fa-camera mr-2"></i>
+                    <span>
+                        {image
+                            ? Object.keys(image).map(function (key) {
+                                    return image[key].name + ", ";
+                                })
+                            : "Tải ảnh lên"}
+                    </span>
+                </label>
 
                 <label htmlFor="name" className="block mt-5">
-                    Room Name:{" "}
+                    Tên phòng:{" "}
                 </label>
                 <input
                     type="text"
@@ -136,7 +176,7 @@ function AddRoomForm() {
                 />
 
                 <label htmlFor="description" className="block mt-5">
-                    Room Description:{" "}
+                    Mô tả phòng:{" "}
                 </label>
                 <textarea
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
@@ -147,7 +187,7 @@ function AddRoomForm() {
                 ></textarea>
 
                 <label htmlFor="address" className="block mt-5">
-                    Hotel:{" "}
+                    Khách sạn:{" "}
                 </label>
 
                 <select
@@ -170,7 +210,7 @@ function AddRoomForm() {
                 </select>
 
                 <label htmlFor="guest" className="block mt-5">
-                    Room Guests:{" "}
+                    Số lượng người ở:{" "}
                 </label>
                 <input
                     type="text"
@@ -183,7 +223,7 @@ function AddRoomForm() {
                 />
 
                 <label htmlFor="price" className="block mt-5">
-                    Room Price:{" "}
+                    Giá phòng:{" "}
                 </label>
                 <input
                     type="text"
@@ -194,7 +234,7 @@ function AddRoomForm() {
                         setRoom({ ...room, price: e.target.value })
                     }
                 />
-                <label className="block mt-5">Features: </label>
+                <label className="block mt-5">Tiện nghi phòng: </label>
                 <input
                     type="text"
                     name="features"
@@ -215,7 +255,7 @@ function AddRoomForm() {
                     hover:shadow-lg block mt-5"
                     type="submit"
                 >
-                    Add Room
+                    Thêm phòng
                 </button>
             </form>
         </div>

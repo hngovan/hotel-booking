@@ -15,6 +15,7 @@ function AdminPersonalInfo({ user, id }) {
         city: ""
     });
     const [image, setImage] = useState(null);
+    const [preview, setPreview] = useState("");
 
     useEffect(() => {
         setUserInfo({
@@ -26,6 +27,18 @@ function AdminPersonalInfo({ user, id }) {
             city: user && user.city ? user.city : ""
         });
     }, [user]); // eslint-disable-line
+
+    useEffect(() => {
+        if(image) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result.toString())
+            }
+            reader.readAsDataURL(image);
+        } else {
+            setPreview(null);
+        }
+    },[image])
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -46,7 +59,7 @@ function AdminPersonalInfo({ user, id }) {
     return (
         <div>
             <h2 className="font-semibold">
-                <i className="fas fa-user mr-2"></i>Change your personal info
+                <i className="fas fa-user mr-2"></i>Thay đổi thông tin cá nhân
             </h2>
             <form
                 action=""
@@ -54,15 +67,23 @@ function AdminPersonalInfo({ user, id }) {
                 onSubmit={onSubmitHandler}
             >
                 <div className="flex items-center mt-5">
-                    <img
-                        src={
-                            user && user.image
-                                ? `${process.env.REACT_APP_BASE_URL}/img/users/${user.image}`
-                                : "http://placehold.it/300x300?text=avatar"
-                        }
-                        alt="avatar"
-                        className="w-32 h-32 rounded-full object-cover"
-                    />
+                    {preview ? (
+                        <img
+                            src={preview}
+                            alt="hotel"
+                            className="w-32 h-32 rounded-full object-cover"
+                        />
+                    ): (
+                        <img
+                            src={
+                                user && user.image
+                                    ? `${process.env.REACT_APP_BASE_URL}/img/users/${user.image}`
+                                    : "http://placehold.it/300x300?text=avatar"
+                            }
+                            alt="avatar"
+                            className="w-32 h-32 rounded-full object-cover"
+                        />
+                    )}
 
                     <label className="ml-5 px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer">
                         <input
@@ -75,56 +96,60 @@ function AdminPersonalInfo({ user, id }) {
                             }}
                         />
                         <i className="fas fa-camera mr-2"></i>
-                        <span>{image ? image.name : "Upload"}</span>
+                        <span>{image ? image.name : "Tải ảnh lên"}</span>
                     </label>
                 </div>
                 <label htmlFor="first_name" className="block mt-5">
-                    First Name:{" "}
+                    Tên:{" "}
                 </label>
                 <input
                     type="text"
                     name="first_name"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userInfo.first_name}
+                    placeholder="Nhập tên của bạn"
                     onChange={(e) =>
                         setUserInfo({ ...userInfo, first_name: e.target.value })
                     }
                 />
 
                 <label htmlFor="last_name" className="block mt-5">
-                    Last Name:{" "}
+                    Họ:{" "}
                 </label>
                 <input
                     type="text"
                     name="last_name"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userInfo.last_name}
+                    placeholder="Nhập họ của bạn"
                     onChange={(e) =>
                         setUserInfo({ ...userInfo, last_name: e.target.value })
                     }
                 />
 
                 <label htmlFor="phone" className="block mt-5">
-                    Phone:{" "}
+                    Số điện thoại:{" "}
                 </label>
                 <input
                     type="tel"
                     name="phone"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userInfo.phone}
+                    placeholder="Nhập số điện thoại của bạn"
                     onChange={(e) =>
                         setUserInfo({ ...userInfo, phone: e.target.value })
                     }
                 />
 
                 <label htmlFor="address" className="block mt-5">
-                    Address:{" "}
+                    Địa chỉ:{" "}
                 </label>
                 <input
                     type="text"
                     name="address"
                     className="p-2 w-full xl:w-1/2 border border-gray-400 focus:outline-none focus:border-black"
                     value={userInfo.address}
+                    placeholder="Nhập địa chỉ của bạn"
                     onChange={(e) =>
                         setUserInfo({ ...userInfo, address: e.target.value })
                     }

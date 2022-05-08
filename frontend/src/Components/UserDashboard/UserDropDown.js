@@ -36,7 +36,7 @@ function UserDropDown() {
                             className="rounded-sm bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                         >
                             <i className="fas fa-user-alt mr-2"></i>
-                            <span className="mt-2 lg:mt-0">My Profile</span>
+                            <span className="mt-2 lg:mt-0">Cá nhân</span>
                         </Link>
                     </li>
                     <li>
@@ -45,7 +45,7 @@ function UserDropDown() {
                             className="rounded-sm bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                         >
                             <i className="fas fa-ticket-alt mr-2"></i>
-                            <span className="mt-2 lg:mt-0">My Bookings</span>
+                            <span className="mt-2 lg:mt-0">Phòng Đã đặt</span>
                         </Link>
                     </li>
                     <li>
@@ -54,7 +54,7 @@ function UserDropDown() {
                             className="rounded-sm bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                         >
                             <i className="fas fa-pen mr-2"></i>
-                            <span className="mt-2 lg:mt-0">My Reviews</span>
+                            <span className="mt-2 lg:mt-0">Bài đánh giá</span>
                         </Link>
                     </li>
                 </ul>

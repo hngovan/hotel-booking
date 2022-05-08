@@ -45,9 +45,9 @@ function HotelHero({ hotel }) {
                         </span>
                     </div>
                     <div className="text-gray-100 mt-2 md:mt-0">
-                        Starting From{" "}
-                        <span className="text-3xl text-orange-300">
-                            {hotel && hotel.min_price}$
+                        Giá chỉ từ{" "}
+                        <span className="ml-2 text-3xl text-orange-300">
+                            {hotel && hotel.min_price} VND
                         </span>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ function SearchFormButton() {
                     hover:shadow-lg"
                     type="submit"
                 >
-                    Search
+                    Tìm kiếm
                 </button>
             </div>
         </div>

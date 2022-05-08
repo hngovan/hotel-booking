@@ -23,7 +23,7 @@ function Search(props) {
         guest: "",
         star: [],
         min_price: 0,
-        max_price: 1000,
+        max_price: 1000000,
         features: []
     });
 

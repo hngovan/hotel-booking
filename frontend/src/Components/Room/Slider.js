@@ -48,7 +48,7 @@ export default class SimpleSlider extends React.Component {
                     <div className="flex flex-col mt-5 h-64 md:mt-0 md:flex-row">
                         <div className="flex md:justify-center md:items-center md:w-1/4">
                             <h2 className="text-2xl text-orange-800  font-semibold mt-5 pl-5">
-                                In Pictures
+                                Ảnh bên trong
                             </h2>
                         </div>
                         {isOpen && (

@@ -4,10 +4,10 @@ import React from "react";
 function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
     return (
         <>
-            <h2 className="pl-5 text-2xl">Step 2: Payment Details</h2>
+            <h2 className="pl-5 text-2xl">Bước 2: Thông tin thanh toán</h2>
             <form className="p-5" onSubmit={onSubmitHandler}>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <label htmlFor="first-name" className="mr-2">First Name*</label>
+                    <label htmlFor="first-name" className="mr-2">Tên *</label>
 
                     <input
                         id="first-name"
@@ -15,6 +15,7 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                         className="p-2 border border-gray-600 mt-2 lg:w-3/4"
                         aria-required="true"
                         value={booking.full_name[0]}
+                        placeholder="Nhập tên của bạn"
                         onChange={(e) =>
                             setBooking({
                                 ...booking,
@@ -27,13 +28,14 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                     />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-2">
-                    <label htmlFor="last-name" className="mr-2">Last Name*</label>
+                    <label htmlFor="last-name" className="mr-2">Họ *</label>
                     <input
                         id="last-name"
                         type="text"
                         className="p-2 border border-gray-600 mt-2 lg:w-3/4"
                         aria-required="true"
                         value={booking.full_name[1]}
+                        placeholder="Nhập họ của bạn"
                         onChange={(e) =>
                             setBooking({
                                 ...booking,
@@ -46,7 +48,7 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                     />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-2 relative">
-                    <label htmlFor="card-number" className="mr-2">Card Number*</label>
+                    <label htmlFor="card-number" className="mr-2">Số thẻ *</label>
                     <input
                         id="card-number"
                         type="text"
@@ -66,7 +68,7 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                     <i className="fas fa-credit-card text-gray-600 transform scale-150 absolute bottom-0 right-0 mr-5 mb-3"></i>
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-2">
-                    <label htmlFor="expiry-date" className="mr-2">Expiry Date*</label>
+                    <label htmlFor="expiry-date" className="mr-2">Ngày hết hạn *</label>
                     <div className="w-full lg:w-3/4">
                         <input
                             id="expiry-date"
@@ -116,7 +118,7 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-2">
-                    <label htmlFor="cvv" className="mr-2">CVV*</label>
+                    <label htmlFor="cvv" className="mr-2">CVV *</label>
                     <div className="w-full lg:w-3/4">
                         <input
                             id="cvv"
@@ -138,16 +140,16 @@ function PaymentForm({ booking, setBooking, maxLengthCheck, onSubmitHandler }) {
                 </div>
 
                 <span aria-hidden="true" className="text-sm text-gray-500 mt-2 inline-block">
-                    * required fields
+                    * Phần bắt buộc
                 </span>
 
-                <h2 className="pl-5 text-2xl">Step 3: Place Order</h2>
+                <h2 className="text-2xl">Bước 3: Thanh toán</h2>
 
                 <button
                     type="submit"
-                    className="bg-orange-700 mt-5 py-2 px-6 text-3xl text-gray-200 block w-10/12 mx-auto hover:bg-orange-900"
+                    className="bg-orange-700 mt-5 py-2 px-6 text-3xl text-gray-200 block w-2/5 mx-auto hover:bg-orange-900"
                 >
-                    BOOK
+                    Đặt ngay
                 </button>
             </form>
         </>

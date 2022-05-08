@@ -40,7 +40,7 @@ function AdminDropDown() {
                             className="rounded-sm bg-gray-300 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                         >
                             <i className="fas fa-user-alt mr-2"></i>
-                            <span className="mt-2 lg:mt-0">My Profile</span>
+                            <span className="mt-2 lg:mt-0">Cá nhân</span>
                         </Link>
                     </li>
                     <li>
@@ -50,7 +50,7 @@ function AdminDropDown() {
                         >
                             <i className="fas fa-building mr-2"></i>
                             <span className="mt-2 lg:mt-0">
-                                Hotels Management
+                                Quản lý khách sạn
                             </span>
                         </Link>
                     </li>
@@ -61,7 +61,7 @@ function AdminDropDown() {
                         >
                             <i className="fas fa-bed mr-2"></i>
                             <span className="mt-2 lg:mt-0">
-                                Rooms Management
+                                Quản lý phòng
                             </span>
                         </Link>
                     </li>
@@ -72,7 +72,7 @@ function AdminDropDown() {
                         >
                             <i className="fas fa-ticket-alt mr-2"></i>
                             <span className="mt-2 lg:mt-0">
-                                Bookings Management
+                                Quản lý đặt phòng
                             </span>
                         </Link>
                     </li>
@@ -83,7 +83,7 @@ function AdminDropDown() {
                         >
                             <i className="fas fa-pen mr-2"></i>
                             <span className="mt-2 lg:mt-0">
-                                Reviews Management
+                                Quản lý bài đánh giá
                             </span>
                         </Link>
                     </li>

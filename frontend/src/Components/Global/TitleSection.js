@@ -6,11 +6,11 @@ function TitleSection({ title }) {
             <h2 className="text-4xl text-center font-semibold text-gray-800 ">
                 {title}
             </h2>
-            <div className="text-center">
+            {/* <div className="text-center">
                 <i className="fas fa-star fa-xs"></i>
                 <i className="fas fa-star fa-xs"></i>
                 <i className="fas fa-star fa-xs"></i>
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -19,7 +19,8 @@ function AddHotelForm() {
         y_coordinate: ""
     });
     const [image, setImage] = useState(null);
-
+    const [preview, setPreview] = useState("");
+    
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -44,6 +45,19 @@ function AddHotelForm() {
         }, 3000);
         return () => clearTimeout(timer);
     }, [state.hotels.success]); // eslint-disable-line
+
+    useEffect(() => {
+        if(image) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result.toString())
+            }
+            reader.readAsDataURL(image);
+        } else {
+            setPreview(null);
+        }
+    },[image])
+
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
             {state.hotels.loading && <Loading />}
@@ -60,35 +74,44 @@ function AddHotelForm() {
                 onSubmit={onSubmitHandler}
             >
                 <label htmlFor="first_name" className="block mt-5">
-                    Hotel Main Picture:{" "}
+                    Hình ảnh chính của khách sạn:{" "}
                 </label>
                 <div className="flex items-center mt-5">
-                    <img
-                        src={
-                            hotel && hotel.image
-                                ? `${process.env.REACT_APP_BASE_URL}/img/hotels/${hotel.image}`
-                                : "http://placehold.it/300x300?text=hotel image"
-                        }
-                        alt="hotel"
-                        className="w-32 h-32 rounded-sm object-cover"
-                    />
+                    {preview ? (
+                        <img
+                            src={preview}
+                            alt="hotel"
+                            className="w-32 h-32 rounded-sm object-cover"
+                        />
+                    ): (
+                        <img
+                            src={
+                                hotel && hotel.image
+                                    ? `${process.env.REACT_APP_BASE_URL}/img/hotels/${hotel.image}`
+                                    : "https://via.placeholder.com/150"
+                            }
+                            alt="hotel"
+                            className="w-32 h-32 rounded-sm object-cover"
+                        />
+                    )}
 
                     <label className="ml-5 px-5 py-2 text-gray-200 bg-orange-500 hover:bg-orange-900 rounded-sm cursor-pointer">
                         <input
                             type="file"
                             id="test"
                             className="hidden"
+                            accept="image/*"
                             onChange={(e) => {
                                 setImage(e.target.files[0]);
                             }}
                         />
                         <i className="fas fa-camera mr-2"></i>
-                        <span>{image ? image.name : "Upload"}</span>
+                        <span>{image ? image.name : "Tải ảnh lên"}</span>
                     </label>
                 </div>
 
                 <label htmlFor="name" className="block mt-5">
-                    Hotel Name:{" "}
+                    Tên khách sạn:{" "}
                 </label>
                 <input
                     type="text"
@@ -101,7 +124,7 @@ function AddHotelForm() {
                 />
 
                 <label htmlFor="star" className="block mt-5">
-                    Star:{" "}
+                    Số sao:{" "}
                 </label>
                 <input
                     type="number"
@@ -114,7 +137,7 @@ function AddHotelForm() {
                 />
 
                 <label htmlFor="address" className="block mt-5">
-                    Address:{" "}
+                    Địa chỉ:{" "}
                 </label>
                 <input
                     type="text"
@@ -127,7 +150,7 @@ function AddHotelForm() {
                 />
 
                 <label htmlFor="city" className="block mt-5">
-                    City:{" "}
+                    Thành phố:{" "}
                 </label>
                 <input
                     type="text"
@@ -143,10 +166,10 @@ function AddHotelForm() {
                     htmlFor="map_coordinates"
                     className="block mt-5 font-semibold"
                 >
-                    Map Coordinate:{" "}
+                    Tọa độ bản đồ:{" "}
                 </label>
                 <label htmlFor="map_coordinates" className="block mt-5">
-                    X Coordinate:{" "}
+                    Tọa độ X:{" "}
                 </label>
                 <input
                     type="text"
@@ -158,7 +181,7 @@ function AddHotelForm() {
                     }
                 />
                 <label htmlFor="map_coordinates" className="block mt-5">
-                    Y Coordinate:{" "}
+                    Tọa độ Y:{" "}
                 </label>
                 <input
                     type="text"

@@ -46,7 +46,7 @@ function SignupForm() {
                 <ErrorMessage errors={state.auth.errors} />
             )}
             <h1 className="text-3xl font-semibold text-center">
-                Create a free account in order to access our services
+                Tạo một tài khoản miễn phí để truy cập các dịch vụ của chúng tôi
             </h1>
 
             <form
@@ -54,8 +54,8 @@ function SignupForm() {
                 className="w-11/12 sm:w-10/12 lg:w-6/12 xl:w-4/12 bg-gray-200 p-10 rounded-sm  mt-10 border shadow-lg"
                 onSubmit={onSubmitHandler}
             >
-                <label htmlFor="first_name" className="block">
-                    First Name:{" "}
+                <label htmlFor="first_name" className="block mb-2">
+                    Tên:{" "}
                 </label>
                 <input
                     id="first_name"
@@ -63,13 +63,14 @@ function SignupForm() {
                     name="first_name"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
+                    placeholder="Nhập tên của bạn"
                     onChange={(e) =>
                         setUser({ ...user, first_name: e.target.value })
                     }
                 />
 
-                <label htmlFor="last_name" className="block mt-5">
-                    Last Name:{" "}
+                <label htmlFor="last_name" className="block mt-5 mb-2">
+                    Họ:{" "}
                 </label>
                 <input
                     id="last_name"
@@ -77,12 +78,13 @@ function SignupForm() {
                     name="last_name"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
+                    placeholder="Nhập họ của bạn"
                     onChange={(e) =>
                         setUser({ ...user, last_name: e.target.value })
                     }
                 />
 
-                <label htmlFor="email" className="block mt-5">
+                <label htmlFor="email" className="block mt-5 mb-2">
                     Email:{" "}
                 </label>
                 <input
@@ -91,13 +93,14 @@ function SignupForm() {
                     name="email"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
+                    placeholder="Nhập email của bạn"
                     onChange={(e) =>
                         setUser({ ...user, email: e.target.value })
                     }
                 />
 
-                <label htmlFor="password" className="block mt-5">
-                    Password:{" "}
+                <label htmlFor="password" className="block mt-5 mb-2">
+                    Mật khẩu:{" "}
                 </label>
                 <input
                     id="password"
@@ -105,6 +108,7 @@ function SignupForm() {
                     name="password"
                     className="p-2 w-full border border-gray-400 focus:outline-none focus:border-black"
                     aria-required="true"
+                    placeholder="Nhập mật khẩu của bạn"
                     onChange={(e) =>
                         setUser({ ...user, password: e.target.value })
                     }
@@ -117,14 +121,14 @@ function SignupForm() {
                         type="submit"
                         aria-label="sign up"
                     >
-                        Sign Up
+                        Đăng kí
                     </button>
 
                     <Link
                         to="/login"
                         className="text-orange-800 mt-5 md:mt-0 hover:text-orange-600"
                     >
-                        Already have an account?
+                        Bạn đã có tài khoản?
                     </Link>
                 </div>
             </form>

@@ -26,7 +26,7 @@ function RoomsList() {
     }, [state.rooms.success]); // eslint-disable-line
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h2 className="text-xl font-semibold">All Rooms</h2>
+            <h2 className="text-xl font-semibold">Tất cả các phòng</h2>
             {state.rooms.loading && <Loading />}
             {state.rooms.success === false && (
                 <ErrorMessage errors={state.rooms.errors} />
@@ -36,7 +36,7 @@ function RoomsList() {
                 to="/add-room"
                 className="mt-5 px-2 py-1 inline-block rounded-sm  text-gray-100 bg-green-600 hover:bg-green-900"
             >
-                Add a Room
+                Thêm phòng
             </Link>
             {state.rooms.pagination.last_page !== 1 && (
                 <Pagination

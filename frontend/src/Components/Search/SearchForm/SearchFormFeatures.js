@@ -4,7 +4,7 @@ import Checkbox from "../../Global/Checkbox";
 function SearchFormFeatures({ criteria, setCriteria, features }) {
     return (
         <div className="text-gray-900">
-            <h2 className="text-2xl font-semibold">Features:</h2>
+            <h2 className="text-2xl font-semibold">Tiện nghi phòng:</h2>
 
             {features &&
                 features.map((feature, i) => {

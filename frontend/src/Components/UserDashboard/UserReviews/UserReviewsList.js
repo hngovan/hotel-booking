@@ -18,7 +18,7 @@ function UserReviewsList() {
 
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h1 className="text-xl font-semibold">Your Reviews</h1>
+            <h1 className="text-xl font-semibold">Nhận xét của bạn</h1>
 
             {state.bookings.loading && <Loading />}
 
@@ -38,7 +38,7 @@ function UserReviewsList() {
                 })}
 
             {state.reviews.reviews.length === 0 && (
-                <div className="mt-10">You have no reviews!</div>
+                <div className="mt-10">Bạn chưa có nhận xét nào!</div>
             )}
             {state.reviews.pagination.last_page !== 1 && (
                 <Pagination

@@ -28,14 +28,14 @@ function HotelItem({
             />
             <div className="w-2/3 px-4 py-4 bg-gray-100 rounded-r-sm ">
                 <h2 className="text-md text-gray-700 mt-4">
-                    Hotel <span className="font-semibold">{name}</span>
+                    Khách sạn: <span className="font-semibold">{name}</span>
                 </h2>
                 <h2 className="text-md text-gray-700 mt-4">
-                    Rooms Count :{" "}
+                    Số lượng phòng :{" "}
                     <span className="font-semibold">{rooms_count}</span>
                 </h2>
                 <h2 className="text-md text-gray-700 mt-4">
-                    Bookings Count :{" "}
+                    Số lượng đặt trước:{" "}
                     <span className="font-semibold">{bookings_count}</span>
                 </h2>
                 <div className="mt-5 text-gray-200 absolute bottom-0 right-0 mb-5 mr-5">
@@ -48,14 +48,16 @@ function HotelItem({
                             })
                         }
                     >
-                        Delete
+                        Xóa
                     </button>
-                    <Link
-                        to={`/edit-hotel/${id}`}
-                        className="ml-2 text-xs font-semibold px-2 py-1 bg-blue-600 rounded-sm hover:bg-blue-900"
-                    >
-                        Edit
-                    </Link>
+                    <button className="ml-2 text-xs font-semibold px-2 py-1 bg-blue-600 rounded-sm hover:bg-blue-900">
+                        <Link
+                            to={`/edit-hotel/${id}`}
+                            
+                        >
+                            Sửa
+                        </Link>
+                    </button>
                 </div>
             </div>
         </div>

@@ -45,10 +45,10 @@ function ReviewForm(props) {
                 <ErrorMessage errors={state.reviews.errors} />
             )}
             {state.reviews.success && (
-                <SuccessMessage message="Your Review Has Been Posted" />
+                <SuccessMessage message="Đáng giá của bạn đã được gửi" />
             )}
             <h2 className="text-2xl font-semibold text-gray-800">
-                Post A Review
+                Gửi đánh giá
             </h2>
             <form className="w-full" onSubmit={onSubmitHandler}>
                 <textarea
@@ -61,7 +61,7 @@ function ReviewForm(props) {
                 ></textarea>
                 <div className="flex items-center">
                     <button className="bg-orange-500 hover:bg-orange-700 text-gray-100 font-bold py-2 px-4 rounded-sm mr-5">
-                        Post
+                        Gửi
                     </button>
                     <select
                         className="py-2 px-4"
@@ -70,16 +70,16 @@ function ReviewForm(props) {
                             setReview({ ...review, rating: e.target.value })
                         }
                     >
-                        <option value="10">10 Amazing</option>
-                        <option value="9">9 Great</option>
-                        <option value="8">8 Very Good</option>
-                        <option value="7">7 Good</option>
-                        <option value="6">6 Fine</option>
-                        <option value="5">5 Average</option>
-                        <option value="4">4 Bad</option>
-                        <option value="3">3 Very Bad</option>
-                        <option value="2">2 Horrible</option>
-                        <option value="1">1 Appaling</option>
+                        <option value="10">10 Quá tuyệt vời</option>
+                        <option value="9">9 Tuyệt vời</option>
+                        <option value="8">8 Rất tốt</option>
+                        <option value="7">7 Tốt</option>
+                        <option value="6">6 Ổn</option>
+                        <option value="5">5 Tạm ổn</option>
+                        <option value="4">4 Tệ</option>
+                        <option value="3">3 Quá tệ</option>
+                        <option value="2">2 Tệ Hại</option>
+                        <option value="1">1 Rất kinh khủng</option>
                     </select>
                 </div>
             </form>

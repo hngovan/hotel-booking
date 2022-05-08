@@ -25,7 +25,7 @@ function ReviewsList() {
     }, [state.reviews.success]); // eslint-disable-line
     return (
         <div className="w-full md:w-6/12 xl:w-8/12 md:ml-5 bg-gray-200 p-5 rounded-sm  ">
-            <h2 className="text-xl font-semibold">All Reviews</h2>
+            <h2 className="text-xl font-semibold">Tất cả đánh giá</h2>
             {state.reviews.loading && <Loading />}
             {state.reviews.success === false && (
                 <ErrorMessage errors={state.reviews.errors} />

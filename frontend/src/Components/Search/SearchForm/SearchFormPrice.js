@@ -3,9 +3,9 @@ import React from "react";
 function SearchFormPrice({ criteria, setCriteria }) {
     return (
         <div className="text-gray-900">
-            <h2 className="text-2xl font-semibold">Price Range:</h2>
+            <h2 className="text-2xl font-semibold">Phạm vi giá:</h2>
             <div className="mt-5">
-                <label htmlFor="min-price">Min: </label>
+                <label htmlFor="min-price">Thấp nhất: </label>
                 <input
                     id="min-price"
                     type="number"
@@ -15,7 +15,7 @@ function SearchFormPrice({ criteria, setCriteria }) {
                         setCriteria({ ...criteria, min_price: e.target.value });
                     }}
                 />
-                <label htmlFor="max-price" className="inline-block mt-5">Max: </label>
+                <label htmlFor="max-price" className="inline-block mt-5">Cao nhất: </label>
                 <input
                     id="max-price"           
                     type="number"
